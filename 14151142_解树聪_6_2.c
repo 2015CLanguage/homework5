@@ -1,0 +1,31 @@
+#include<stdio.h>
+main()
+{
+	int a[10],i,j,b;
+	printf("请按提示输入十个整数：\n");
+	for(i=0;i<10;i=i+1)
+	{
+		printf("a[%d]=",i);
+		scanf("%d",&a[i]);
+	}
+	printf("这十个整数为:\n");
+	for(i=0;i<10;i++)
+		printf("%4d",a[i]);
+	for(i=0;i<10;i=i+1)
+	{
+		for(j=i+1;j<10;j=j+1)
+		{
+			if(a[i]>a[j])
+			{
+				b=a[i];
+				a[i]=a[j];
+				a[j]=b;
+			}
+		}
+	}
+	printf("\n这十个整数由大到小为:\n");
+	for(i=0;i<10;i++)
+		printf("%4d",a[i]);
+	printf("\n");
+
+}
