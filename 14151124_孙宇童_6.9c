@@ -1,0 +1,62 @@
+# include<stdio.h>
+# define N 15
+int main(void)
+{
+	int i,n,top,bott,mid,loca,a[N],flag=1,sign;
+		char c;
+	printf("请输入一个由大到小排列的数组：\n");//输入一个顺序为由大到小的数组
+	scanf("%d",&a[0]);
+	i=1;
+	while(i<N)
+	{
+		scanf("%d",&a[i]);
+		if(a[i]<=a[i-1])
+			i++;
+		else
+			printf("请确认输入的数比前一个小并再次输入：");
+
+	}
+	
+	
+	printf("/n您所输入的数组为：");//将所输入的数组输出
+	for(i=0;i<N;i++)
+		printf("%5d",a[i]);
+	
+	
+	while(flag)
+	{
+		printf("请输入需要查找的数：\n");//top代表开头的元素，bott代表结尾的数
+		scanf("%d",&n);//将需要查找顺序的数输入
+		sign=0;
+		top=0;
+		bott=N-1;
+		if(n>a[0]||n<a[N])//此时所需查找的数并不在数组的范围内
+			loca=-1;
+		while((!sign)&&(top<=bott))
+		{
+			mid=(bott+top)/2;//mid代表中值
+			if(n==a[mid])//即所输入的值恰为中值
+			{
+				loca=mid;
+				printf("%d的位置是%d",n,loca+1);//输入中值的位置，此时loca要加上一才能代表顺序
+				sign=1;//这样返回后!sign值为0，则可以跳出这个循环	
+
+			}
+			else if(n>a[mid])//若比中值大则将比较范围向前推并缩小
+				bott=mid-1;
+			else//若比中值小则将比较范围后前推并缩小
+				top=mid+1;
+		}
+		if(!sign||loca==-1)
+			printf("需要查找的数不在数组内\n");
+		printf("是否继续？(Y/N)\n");
+		scanf("\n%c",&c);//用户输入是否继续
+		if('c'=='N'||'c'=='n')
+			flag=0;//如果选择不再继续则将flag变为0，这样while将不再循环
+
+
+	}
+
+
+	return 0;
+}
