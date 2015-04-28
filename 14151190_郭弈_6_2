@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{   
+	int a[10];
+	int i,j,k,temp;
+	printf("input 10 numbers:\n");
+	for(i=0;i<10;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("\n");
+	for(i=0;i<10;i++)
+	{
+		k=i;
+		for(j=i+1;j<10;j++)
+		{
+                    if(a[k]>a[j]) k=j;
+			temp=a[i];
+			a[i]=a[k];
+			a[k]=temp;
+		}
+	        printf("%d ",a[i]);
+	}  
+	printf("\n");
+        return 0;
+}
