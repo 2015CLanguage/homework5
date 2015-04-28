@@ -1,0 +1,22 @@
+# include<stdio.h>
+int main(void)
+{
+	int a[5],i,j,temp;
+	printf("请输入需要逆序排列的数：\n");//输入数组中的元素
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<5;i++)//一头一尾地将数字调换过来
+	{
+		j=4-i;
+		temp=a[i];
+		a[i]=a[j];
+		a[j]=temp;
+
+	}
+	printf("逆序排列后的顺序为：\n");//逆序输出
+	for(i=0;i<5;i++)
+		printf("%d\n",a[i]);
+	return 0;
+}
