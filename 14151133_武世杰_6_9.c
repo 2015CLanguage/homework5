@@ -4,7 +4,7 @@ int main()
 	printf("请输入15个数：\n");
 	int a[16], i, j, max, x = 0, sign, low, high, mid, n;
 	for (i = 1; i <= 15; i++)
-		scanf_s("%d", &a[i]);
+		scanf("%d", &a[i]);
 	for (i = 1; i <= 14; i++)
 	{
 		max = i;
@@ -19,7 +19,7 @@ int main()
 	for (i=1;i<=15;i++)
 		printf("%d,",a[i]);
 	printf("\n请输入要查找的数：");
-	scanf_s("%d", &x);
+	scanf("%d", &x);
 	sign = 0;
 	low = 1;
 	high = 15;
