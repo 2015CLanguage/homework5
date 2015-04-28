@@ -1,0 +1,25 @@
+# include<stdio.h>
+int main(void)
+{
+	int i,j,min,temp,a[10];
+
+	for(i=0;i<10;i++)//输入数组中的元素
+	{
+		scanf("%d",&a[i]);
+	}
+
+	for(i=0;i<10;i++)
+	{
+		min=i;//先假设一个最小值
+			for(j=i+1;j<10;j++)//用循环进行比较，不断比较出更小的值作为最小值
+			{
+				if(a[min]>a[j])
+					min=j;
+				temp=a[j];
+				a[j]=a[min];
+				a[min]=temp;
+			}
+			printf("%5d",a[i]);
+	}
+	return 0;
+}
