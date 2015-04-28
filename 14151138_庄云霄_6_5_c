@@ -1,0 +1,29 @@
+#include<stdio.h>
+#define N 5
+int main()
+{
+
+	int a[N],i,j;
+	printf("请输入5个整数");
+	for(i=0;i<N;i++)
+		scanf("%d",&a[i]);
+	printf("原序数为: ");
+	for(i=0;i<N;i++)
+		printf("%d," ,a[i]);
+	
+	for(i=0;i<=(N/2-1);i++){
+		j=a[i];
+		a[i]=a[N-1-i];
+		a[N-1-i]=j;
+	}
+	printf("逆序数为：");
+	for(i=0;i<N;i++){
+		printf("%d,",a[i]);
+	}
+
+
+
+
+
+	return 0;
+}
