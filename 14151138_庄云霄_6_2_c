@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+	int list[10],i,j,m;
+	printf("please input 10 num:\n");
+	for(i=0;i<10;i++)
+		scanf("%d",&list[i]);
+	for(j=0;j<9;j++){
+		for(i=j+1;i<10;i++){
+			if(list[i]<list[j]){
+				m=list[j];
+				list[j]=list[i];
+				list[i]=m;
+			}
+		}
+	
+	}
+	printf("从小到大的依次排列的数组为：\n");
+	for(i=0;i<10;i++)
+		printf("%d",list[i]);
+	return 0;
+}
