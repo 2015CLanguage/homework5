@@ -17,19 +17,18 @@ int main()
 	printf("请任意输入要查找的一个整数:");
 	scanf("%d",&n);
 	flag=0;
-	distance=top-bot;
-	for(top=15,bot=1;distance>=1;)
+	for(top=15,bot=1,distance=top-bot;distance>=1;)
 	{
 	    if(n>a[bot+distance/2])
 		{
             top=bot+distance/2;
 			distance=top-bot;
 		}
-		if(n==a[bot+distance/2])
+		else if(n==a[bot+distance/2])
 		{
 			flag=bot+distance/2;
 		}
-		if(n>a[bot+distance/2])
+		else
 		{
             bot=bot+distance/2;
 			distance=top-bot;
