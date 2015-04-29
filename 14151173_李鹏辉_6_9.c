@@ -24,7 +24,7 @@ void main()
 	}
 	if(i>j)
 	{
-		puts("no answer\n");
+		puts("no answers");
 	}
 	else 
 	{
