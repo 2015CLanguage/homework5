@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+	int i, m, low = 0, mid, high = 15, a[15] = { 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+	printf("程序中含有一个数量为十五的正整数数组，请输入一个想要查找的正整数：\n");
+	scanf_s("%d", &m);
+	do
+	{
+		if (m == a[15])
+		{
+			i = 14; break;
+		}
+		mid = (low + high) / 2;
+		if (m>a[mid])
+			high = mid;
+		else
+			if (m<a[mid])
+				low = mid;
+			else
+				i = mid;
+	}
+	while (m != a[mid]);
+	if (i == -1)
+		printf("该数不在数组中\n");
+	else
+		printf("该数在数组中的位置为%d\n", i + 1);
+	return 0;
+}
