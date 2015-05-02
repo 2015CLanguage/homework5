@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,c,d,a[11];
+	printf("请输入十个互不相同的整数\n");
+	for(i=1;i<=10;i++)
+	{
+		printf("a[%d]=",i);
+		scanf_s("%d",&a[i]);
+	}
+	printf("输入的十个数字为：\n");
+	for(i=1;i<=10;i++)
+		printf("%6d",a[i]);
+	printf("\n");
+	for(i=1;i<=9;i++)
+	{
+		for(j=i+1;j<=10;j++)
+		{
+			d=i;
+		if(a[d]>a[j])
+		{
+			d=j;
+			c=a[i];
+			a[i]=a[d];
+			a[d]=c;
+		}
+		}
+	}
+    printf("十个正整数由小到大排序为：\n");
+	for(i=1;i<=10;i++)
+		printf("%6d",a[i]);
+	printf("\n");
+	return 0;
+
+}
+
