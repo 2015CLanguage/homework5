@@ -19,6 +19,7 @@ int main()
 		}
 		listn[1][i]=max;listn[0][k]=-1;
 	}
-	for(i=0;i<=9;i++){printf("%d,",listn[1][i]);}
+	printf("重排序：");
+	for(i=0;i<=9;i++){printf("%3d",listn[1][i]);}
 	return 0;
  } 
