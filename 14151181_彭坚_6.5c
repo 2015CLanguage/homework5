@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int a[5],i,j,b[5],d=6;
+	printf("请输入五个正整数：\n");
+	for(i=1;i<=5;i++)
+	{
+		printf("a[%d]=",i);
+		scanf_s("%d",&a[i]);
+	}
+	printf("顺序数组为：\n");
+	for(i=1;i<=5;i++)
+		printf("%5d",a[i]);
+	printf("\n");
+	for(i=1;i<=5;i++)
+	{
+		d=d-1;
+		b[d]=a[i];
+	}
+    printf("逆序数组为：\n");
+	for(j=1;j<=5;j++)
+		printf("%5d",b[j]);
+	printf("\n");
+	return 0;
+}
