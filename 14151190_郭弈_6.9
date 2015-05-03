@@ -1,0 +1,41 @@
+#include<stdio.h>
+#define N 5
+int main()
+{ 
+	int m,i,j,a[N],b,c,d,mid;
+	printf("请输入一个N个元素的数组：\n"); 
+	for(i=0;i<N;i++)
+	    scanf("%d",&a[i]);
+	printf("\n");
+	for(j=N-1;j>=0;j--)
+	{
+	    for(i=N-1;i>=N-j;i--)
+	    {
+			  if(a[i]>a[i-1]) 
+		    {
+			    b=a[i];
+			    a[i]=a[i-1];
+			    a[i-1]=b;
+		    }
+	    }
+	}
+	printf("该数组按由大到小的顺序排列为：\n");
+	for(i=0;i<=N-1;i++)
+   	    printf("%d ",a[i]);
+	printf("\n");
+	printf("选择你要查找的数: ");
+	scanf("%d",&m);
+	printf("\n");
+	if(m>a[0]||m<a[N-1]) printf("无此数");
+	c=0,d=N-1;
+	while(c<d-1)
+    {
+    	mid=(c+d)/2;
+    	if(m==a[mid]) break;
+    	if(m>a[mid]) d=mid;
+    	if(m<a[mid]) c=mid;
+	  }
+	if(m==a[mid]) printf("此元素是第%d个元素",mid+1);
+	if(c==d-1) printf("无此数"); 
+	return 0;
+}
