@@ -6,7 +6,6 @@ int main()
 	{
 		printf("请输入方阵阶数: ");
 	    scanf("%d",&n);
-		printf("\n ");
 		if((n>0)&&(n<=19)&&(n%2!=0))
 			f=0;	
 	}
