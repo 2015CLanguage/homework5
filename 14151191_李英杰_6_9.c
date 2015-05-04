@@ -16,7 +16,7 @@ int main()
 	}
 	printf("\n");
 	low=0;
-    high=N-1;
+        high=N-1;
 	mid=(low+high)/2;
 	printf("请输入要查找的数:");
 	scanf("%d",&aim);
