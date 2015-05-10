@@ -1,4 +1,4 @@
-Enter file contents here#include <stdio.h>
+#include <stdio.h>
 int a[10];
 int n;
 int main()
